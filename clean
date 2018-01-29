@@ -2,6 +2,9 @@
 
 echo 'Removing exited containers and dangling images.'
 
+# Docker prune.
+docker system prune -f -a
+
 # Remove exited containers.
 docker rm $(docker ps --all --filter="status=exited" --quiet)
 
